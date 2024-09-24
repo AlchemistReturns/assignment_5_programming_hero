@@ -26,6 +26,7 @@ function createHistory(inputValue,eventName) {
     
 }
 
+
 function donate(input) {
     if (input == 1) {
         let value = document.getElementById('input-1').value;
@@ -38,6 +39,7 @@ function donate(input) {
             wallet.innerText = `${balance} BDT`;
             donation1.innerText = `${campaign1} BDT`;
             createHistory(value, "Noakhali");
+            modal.showModal();
         }
         
     }
@@ -52,6 +54,7 @@ function donate(input) {
             wallet.innerText = `${balance} BDT`;
             donation2.innerText = `${campaign2} BDT`;
             createHistory(value, "Feni");
+            modal.showModal();
         }
         
     }
@@ -66,6 +69,7 @@ function donate(input) {
             wallet.innerText = `${balance} BDT`;
             donation3.innerText = `${campaign3} BDT`;
             createHistory(value, "Protest");
+            modal.showModal();
         }
     }
 }
