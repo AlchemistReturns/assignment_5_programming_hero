@@ -30,8 +30,8 @@
     </nav>
 
     <div class="flex py-6 justify-center gap-4 fixed top-20 w-full z-50 backdrop-blur">
-        <button class="bg-[#B4F461] py-3 px-8 rounded-lg">Donation</button>
-        <button class="border-2 py-3 px-8 rounded-lg hover:bg-[#eee]">History</button>
+        <button class="bg-[#B4F461] py-3 px-8 rounded-lg border-2" onclick=showDonation() id="donation-button">Donation</button>
+        <button class="border-2 py-3 px-8 rounded-lg" onclick=showHistory() id="history-button">History</button>
     </div>
 
     <div class="flex flex-col gap-6 mb-8 relative top-48" id="donation-tabs">
@@ -78,6 +78,8 @@
         </div>
         
     </div>
+
+    <div class="flex flex-col gap-6 mb-8 relative top-48" id="history-tabs"></div>
 
     <div class="bg-[#f9f7f3] h-20 relative top-48">
 

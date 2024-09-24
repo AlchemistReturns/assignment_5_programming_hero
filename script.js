@@ -35,3 +35,26 @@ function donate(input, donation) {
         donation3.innerText = `${campaign3} BDT`;
     }
 }
+
+function showDonation() {
+    let show = document.getElementById("donation-tabs");
+    let hide = document.getElementById("history-tabs");
+    show.classList.remove("hidden");
+    let donationButton = document.getElementById("donation-button");
+    donationButton.classList.add("bg-[#B4F461]");
+    hide.classList.add("hidden");
+    let historyButton = document.getElementById("history-button");
+    historyButton.classList.remove("bg-[#B4F461]");
+    
+}
+
+function showHistory() {
+    let show = document.getElementById("history-tabs");
+    let hide = document.getElementById("donation-tabs");
+    show.classList.remove("hidden");
+    hide.classList.add("hidden");
+    let donationButton = document.getElementById("donation-button");
+    donationButton.classList.remove("bg-[#B4F461]");
+    let historyButton = document.getElementById("history-button");
+    historyButton.classList.add("bg-[#B4F461]");
+}
