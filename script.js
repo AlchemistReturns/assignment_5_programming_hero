@@ -6,33 +6,67 @@ let donation1 = document.getElementById("campaign-1");
 let donation2 = document.getElementById("campaign-2");
 let donation3 = document.getElementById("campaign-3");
 
-function donate(input, donation) {
+function createHistory(inputValue,eventName) {
+    const historySection=document.getElementById('history-tabs');
+    const parentDiv=document.createElement('div');
+    parentDiv.classList.add('border-2','rounded-lg','p-4','space-y-4', 'w-3/4', 'mx-auto');
+
+    const h2=document.createElement('h2');
+    h2.classList.add('font-bold');
+    h2.innerText=`${inputValue} taka is donated  for ${eventName}`;
+
+    const p=document.createElement('p');
+    p.classList.add('font-light');
+    const now=new Date();
+    p.innerText=`${now}`;
+
+    parentDiv.appendChild(h2);
+    parentDiv.appendChild(p);
+    historySection.insertBefore(parentDiv, historySection.firstChild);
+    
+}
+
+function donate(input) {
     if (input == 1) {
         let value = document.getElementById('input-1').value;
-        if (value <= balance) {
+        if (isNaN(value) || value > balance || value < 0) {
+            alert("Invalid transaction");
+        }
+        else {
             balance -= value;
             campaign1 += parseInt(value);
+            wallet.innerText = `${balance} BDT`;
+            donation1.innerText = `${campaign1} BDT`;
+            createHistory(value, "Noakhali");
         }
-        wallet.innerText = `${balance} BDT`;
-        donation1.innerText = `${campaign1} BDT`;
+        
     }
     if (input == 2) {
         let value = document.getElementById('input-2').value;
-        if (value <= balance) {
+        if (isNaN(value) || value > balance || value < 0) {
+            alert("Invalid transaction");
+        }
+        else {
             balance -= value;
             campaign2 += parseInt(value);
+            wallet.innerText = `${balance} BDT`;
+            donation2.innerText = `${campaign2} BDT`;
+            createHistory(value, "Feni");
         }
-        wallet.innerText = `${balance} BDT`;
-        donation2.innerText = `${campaign2} BDT`;
+        
     }
     if (input == 3) {
         let value = document.getElementById('input-3').value;
-        if (value <= balance) {
+        if (isNaN(value) || value > balance || value < 0) {
+            alert("Invalid transaction");
+        }
+        else {
             balance -= value;
             campaign3 += parseInt(value);
+            wallet.innerText = `${balance} BDT`;
+            donation3.innerText = `${campaign3} BDT`;
+            createHistory(value, "Protest");
         }
-        wallet.innerText = `${balance} BDT`;
-        donation3.innerText = `${campaign3} BDT`;
     }
 }
 
